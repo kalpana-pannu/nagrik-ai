@@ -1,0 +1,19 @@
+
+#define RAIN_PIN 33
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("NAGRIK AI - Rain Sensor Ready");
+}
+
+void loop() {
+  int rainLevel = analogRead(RAIN_PIN);
+  if (rainLevel < 2000) {
+    Serial.print("WATERLOGGING/RAIN ALERT - Level: ");
+    Serial.println(rainLevel);
+  } else {
+    Serial.print("Dry - Level: ");
+    Serial.println(rainLevel);
+  }
+  delay(1000);
+}
