@@ -1,0 +1,19 @@
+// NAGRIK AI - MQ-135 Air Quality Sensor
+// VCC -> 5V/VIN (required, 3.3V causes brownout)
+// GND -> GND
+// AO  -> GPIO34
+
+#define MQ135_PIN 34
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("NAGRIK AI - Gas Sensor Warming Up...");
+  delay(20000); // 20 sec warm-up, required for MQ-series
+}
+
+void loop() {
+  int gasValue = analogRead(MQ135_PIN);
+  Serial.print("Air Quality Reading: ");
+  Serial.println(gasValue);
+  delay(1000);
+}
