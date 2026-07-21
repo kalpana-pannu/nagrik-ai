@@ -1,0 +1,15 @@
+// NAGRIK AI - Buzzer Alert Output
+// VCC -> 3.3V | GND -> GND | Signal -> GPIO25
+
+#define BUZZER_PIN 25
+
+void setup() {
+  pinMode(BUZZER_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(BUZZER_PIN, HIGH);
+  delay(200);
+  digitalWrite(BUZZER_PIN, LOW);
+  delay(200);
+}
