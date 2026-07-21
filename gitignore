@@ -1,0 +1,20 @@
+# Arduino / ESP32 build artifacts
+build/
+*.hex
+*.bin
+*.elf
+*.map
+
+# Arduino IDE / editor files
+.vscode/
+*.code-workspace
+.DS_Store
+
+# PlatformIO (if used later)
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Environment / secrets
+.env
+secrets.h
