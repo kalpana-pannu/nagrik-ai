@@ -1,0 +1,25 @@
+// NAGRIK AI - LDR Streetlight Sensor
+// KNOWN ISSUE: This module is DO-only (no AO pin), so it only gives
+// binary bright/dark, not a continuous light level. Shelved pending
+// a 4-pin AO-capable module for proper gradual dimming detection.
+// VCC -> 3.3V | GND -> GND | DO -> GPIO4
+
+#define LDR_PIN 4
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LDR_PIN, INPUT);
+  Serial.println("NAGRIK AI - LDR Ready");
+}
+
+void loop() {
+  int state = digitalRead(LDR_PIN);
+
+  if (state == LOW) {
+    Serial.println("STREETLIGHT FAILURE ALERT - Dark detected");
+  } else {
+    Serial.println("Light Level Normal - Bright");
+  }
+
+  delay(1000);
+}
